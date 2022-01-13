@@ -24,6 +24,20 @@ spec:
       containers:
         - name: migration-job
           env:
-            {{- toYaml .Values.env | nindent 13 }}
+            - name: DB_HOST
+              value: "{{ .Release.Name }}-mariadb"
+
+            - name: DB_PORT
+              value: "3306"
+
+            - name: DB_USER
+              value: "root"
+
+            - name: DB_PASSWORD
+              value: {{ .Values.mariadb.auth.rootPassword | quote }}
+
+            - name: DB_NAME
+              value: "app"
+
           image: "{{ .Values.images.migration.repository }}:{{ .Values.images.migration.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.images.migration.pullPolicy }}

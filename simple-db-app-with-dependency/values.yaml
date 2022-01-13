@@ -11,22 +11,6 @@ images:
 
 replicaCount: 1
 
-env:
-  - name: DB_HOST
-    value: "maria-db-mariadb"
-
-  - name: DB_PORT
-    value: "3306"
-
-  - name: DB_USER
-    value: "root"
-
-  - name: DB_PASSWORD
-    value: "root"
-
-  - name: DB_NAME
-    value: "app"
-
 service:
   type: NodePort
   port: 3000
@@ -38,3 +22,7 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
+
+mariadb:
+  auth:
+    rootPassword: root
