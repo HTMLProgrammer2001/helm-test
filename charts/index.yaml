@@ -1,0 +1,29 @@
+apiVersion: v1
+entries:
+  simple-db-app-chart:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-01-14T00:37:44.9312139+02:00"
+    description: A Helm chart for simple db app
+    digest: 7f078fd46ed4398148c4d31cff3b3566d5f6d9d902c5a0422fbd0530868e91ba
+    name: simple-db-app-chart
+    type: application
+    urls:
+    - simple-db-app-chart-0.1.0.tgz
+    version: 0.1.0
+  simple-db-app-chart-with-dependency:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-01-14T00:37:44.9364109+02:00"
+    dependencies:
+    - name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.1.1
+    description: A Helm chart for simple db app with mariadb as dependency
+    digest: ac6bee7afd8ca6731777f686ec8ce5d2725261591196b7df6b688258fd9ae20a
+    name: simple-db-app-chart-with-dependency
+    type: application
+    urls:
+    - simple-db-app-chart-with-dependency-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-01-14T00:37:44.9152126+02:00"
