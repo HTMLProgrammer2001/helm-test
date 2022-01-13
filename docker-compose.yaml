@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    image: simple-db-app:1.0
+    env_file: .env
+    depends_on:
+      - migration
+    ports:
+      - 3000:3000
+
+  migration:
+    image: simple-db-app-migration:1.0
+    env_file: .env

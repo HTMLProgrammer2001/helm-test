@@ -1,0 +1,5 @@
+FROM alpine:3.4
+WORKDIR /app
+COPY ./migration.sql .
+RUN apk add --update mysql-client && rm -rf /var/cache/apk/*
+ENTRYPOINT mysql -h $DB_HOST -u $DB_USER --password=$DB_PASSWORD -P $DB_PORT mysql < migration.sql
