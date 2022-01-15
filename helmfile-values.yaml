@@ -1,0 +1,24 @@
+auth:
+  rootPassword: root
+
+env:
+  - name: DB_HOST
+    value: "mariadb"
+
+  - name: DB_PORT
+    value: "3306"
+
+  - name: DB_USER
+    value: "root"
+
+  - name: DB_PASSWORD
+    value: "root"
+
+  - name: DB_NAME
+    value: "app"
+
+service:
+  nodePort: 32500
+
+autoscaling:
+  enabled: true

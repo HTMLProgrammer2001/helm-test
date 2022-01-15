@@ -1,0 +1,23 @@
+repositories:
+    - name: app-repo
+      url: https://htmlprogrammer2001.github.io/helm-test/charts
+
+    - name: bitnami
+      url: https://charts.bitnami.com/bitnami
+
+commonLabels:
+  app: simple-db-app
+
+releases:
+  - name: app
+    chart: app-repo/simple-db-app-chart
+    needs:
+      - mariadb
+    values:
+      - helmfile-values.yaml
+
+  - name: mariadb
+    chart: bitnami/mariadb
+    version: 10.1.1
+    values:
+      - helmfile-values.yaml
