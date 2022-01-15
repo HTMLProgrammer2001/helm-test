@@ -5,7 +5,7 @@ images:
     pullPolicy: IfNotPresent
 
   migration:
-    repository: simple-db-app-migration
+    repository: htmlprogrammer2001/simple-db-app-migration
     tag: "1.0"
     pullPolicy: IfNotPresent
 
